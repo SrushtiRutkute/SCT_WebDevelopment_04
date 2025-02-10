@@ -37,26 +37,29 @@
   📂 /To-Do-Web-App
   
   │── index.html – Main HTML structure
+  
   │── styles.css – Styling for the app
+  
   │── script.js – JavaScript functionality
+  
   │── README.md – Project documentation
 
 
 * Working of the To-Do List App:
 
-Add Tasks – Users can enter a task, set a due date, priority, and category.
+  Add Tasks – Users can enter a task, set a due date, priority, and category.
 
-Edit Tasks – Modify existing tasks using the edit option.
+  Edit Tasks – Modify existing tasks using the edit option.
 
-Mark as Completed – Tasks can be marked as completed and will be visually indicated.
+  Mark as Completed – Tasks can be marked as completed and will be visually indicated.
 
-Delete Tasks – Remove tasks permanently from the list.
+  Delete Tasks – Remove tasks permanently from the list.
 
-Sorting & Filtering – Sort and filter tasks based on priority, category, or completion status.
+  Sorting & Filtering – Sort and filter tasks based on priority, category, or completion status.
 
-Task Progress Bar – A bar graph visually represents the number of tasks in different categories.
+  Task Progress Bar – A bar graph visually represents the number of tasks in different categories.
 
-Local Storage – Tasks are saved in the browser’s local storage for persistence.
+  Local Storage – Tasks are saved in the browser’s local storage for persistence.
 
 
 
