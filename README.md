@@ -27,7 +27,7 @@
 
   2.CSS – Custom styling for enhanced UI.
 
-  3.JavaScript (Vanilla JS) – Handles task management, local storage, and interactivity.
+  3.JavaScript – Handles task management, local storage, and interactivity.
 
   4.Chart.js – Renders the task progress bar graph.
 
