@@ -1,46 +1,48 @@
-*To-Do List Web App
+* To-Do List Web App
 
-A simple and organized To-Do List Web App that helps users add, manage, and track tasks efficiently with a clean user interface.
+  A simple and organized To-Do List Web App that helps users add, manage, and track tasks efficiently with a clean user interface.
 
-*Features:
+* Features:
 
-Add Tasks – Input task details including title, due date, priority, and category.
+  Add Tasks – Input task details including title, due date, priority, and category.
 
-Edit Tasks – Modify existing tasks without re-adding them.
+  Edit Tasks – Modify existing tasks without re-adding them.
 
-Mark as Completed – Click to mark a task as completed.
+  Mark as Completed – Click to mark a task as completed.
 
-Delete Tasks – Remove tasks permanently.
+  Delete Tasks – Remove tasks permanently.
 
-Task Progress Bar – Visual representation of tasks by category using Chart.js.
+  Task Progress Bar – Visual representation of tasks by category using Chart.js.
 
-Priority Levels – Set tasks as high, medium, or low priority.
+  Priority Levels – Set tasks as high, medium, or low priority.
 
-Category Selection – Classify tasks under work, personal, or study.
+  Category Selection – Classify tasks under work, personal, or study.
 
-Local Storage Support – Tasks remain saved even after refreshing the page.
-
-
-Technologies Used:
-
-HTML – Structure of the web app.
-
-CSS – Custom styling for enhanced UI.
-
-JavaScript (Vanilla JS) – Handles task management, local storage, and interactivity.
-
-Chart.js – Renders the task progress bar graph.
+  Local Storage Support – Tasks remain saved even after refreshing the page.
 
 
-File Structure:
+* Technologies Used:
 
-📂 /To-Do-Web-App
-│── index.html – Main HTML structure
-│── styles.css – Styling for the app
-│── script.js – JavaScript functionality
-│── README.md – Project documentation
+  HTML – Structure of the web app.
 
-Working of the To-Do List App:
+  CSS – Custom styling for enhanced UI.
+
+  JavaScript (Vanilla JS) – Handles task management, local storage, and interactivity.
+
+  Chart.js – Renders the task progress bar graph.
+
+
+* File Structure:
+
+  📂 /To-Do-Web-App
+  
+  │── index.html – Main HTML structure
+  │── styles.css – Styling for the app
+  │── script.js – JavaScript functionality
+  │── README.md – Project documentation
+
+
+* Working of the To-Do List App:
 
 Add Tasks – Users can enter a task, set a due date, priority, and category.
 
