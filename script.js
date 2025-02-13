@@ -2,19 +2,19 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTasks();
 });
 
-/* Add Task */
 function addTask() {
     let taskInput = document.getElementById("taskInput").value.trim();
     let taskDate = document.getElementById("taskDate").value;
+    let taskTime = document.getElementById("taskTime").value;
     let priority = document.getElementById("priority").value;
     let category = document.getElementById("category").value;
 
-    if (taskInput === "" || taskDate === "") {
-        alert("⚠ Please enter a task and set a due date!");
+    if (taskInput === "" || taskDate === "" || taskTime === "") {
+        alert("⚠ Please enter a task, set a due date, and specify a time!");
         return;
     }
 
-    let task = { text: taskInput, date: taskDate, priority, category, completed: false };
+    let task = { text: taskInput, date: taskDate, time: taskTime, priority, category, completed: false };
 
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.push(task);
@@ -23,9 +23,9 @@ function addTask() {
     renderTasks();
     document.getElementById("taskInput").value = "";
     document.getElementById("taskDate").value = "";
+    document.getElementById("taskTime").value = "";
 }
 
-/* Load & Render Tasks */
 function loadTasks() {
     renderTasks();
 }
@@ -44,10 +44,17 @@ function renderTasks() {
 
         let formattedDate = new Date(task.date).toLocaleDateString("en-GB");
 
+        let [hours, minutes] = task.time.split(":");
+        let formattedTime = new Date(0, 0, 0, hours, minutes).toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        });
+
         let row = document.createElement("tr");
         row.innerHTML = `
             <td class="${task.completed ? 'completed' : ''}">${task.text}</td>
-            <td>${formattedDate}</td>
+            <td>${formattedDate} - ${formattedTime}</td>
             <td class="${task.priority}">
                 ${task.priority === "high" ? "🔥 <b>High</b>" : 
                   task.priority === "medium" ? "⚡ <b>Medium</b>" : 
@@ -66,7 +73,6 @@ function renderTasks() {
     updateChart(categories);
 }
 
-/* Edit Task */
 function editTask(index) {
     let tasks = JSON.parse(localStorage.getItem("tasks"));
     let newText = prompt("Edit Task:", tasks[index].text);
@@ -77,7 +83,6 @@ function editTask(index) {
     }
 }
 
-/* Toggle Completed Task */
 function toggleComplete(index) {
     let tasks = JSON.parse(localStorage.getItem("tasks"));
     tasks[index].completed = !tasks[index].completed;
@@ -85,7 +90,6 @@ function toggleComplete(index) {
     renderTasks();
 }
 
-/* Delete Task */
 function deleteTask(index) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.splice(index, 1);
@@ -93,13 +97,12 @@ function deleteTask(index) {
     renderTasks();
 }
 
-/* Updated Task Progress Bar Graph */
 let chartInstance = null;
 function updateChart(categories) {
     let ctx = document.getElementById("taskChart").getContext("2d");
 
     if (chartInstance) {
-        chartInstance.destroy(); // Clear previous chart before updating
+        chartInstance.destroy();
     }
 
     chartInstance = new Chart(ctx, {
@@ -113,7 +116,7 @@ function updateChart(categories) {
         },
         options: {
             plugins: { legend: { display: false } },
-            responsive: false,
+            responsive: true,
             maintainAspectRatio: false,
             scales: {
                 y: { beginAtZero: true, max: 10 }
