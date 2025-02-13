@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced To-Do List</title>
+    <title>To-Do List Web App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>📋 <span class="bold">To-Do List</span></h1>
 
-        <!-- Task Input Table -->
+    <div class="container">
+        <h1><b>To-Do List</b></h1>
+
+        <!-- Task Input Section -->
         <table class="input-table">
             <tr>
-                <td><label for="taskInput"><span class="bold">Task:</span></label></td>
-                <td><input type="text" id="taskInput" placeholder="Enter a task"></td>
+                <td><b>Task:</b></td>
+                <td><input type="text" id="taskInput" placeholder="Enter your task"></td>
             </tr>
             <tr>
-                <td><label for="taskDate"><span class="bold">Due Date:</span></label></td>
-                <td><input type="datetime-local" id="taskDate"></td>
+                <td><b>Due Date:</b></td>
+                <td><input type="date" id="taskDate"></td>
             </tr>
             <tr>
-                <td><label for="priority"><span class="bold">📌 Priority:</span></label></td>
+                <td><b>Task Time:</b></td>
+                <td><input type="time" id="taskTime"></td>
+            </tr>
+            <tr>
+                <td><b>Priority:</b></td>
                 <td>
                     <select id="priority">
                         <option value="high">🔥 High</option>
-                        <option value="medium" selected>⚡ Medium</option>
+                        <option value="medium">⚡ Medium</option>
                         <option value="low">🌱 Low</option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <td><label for="category"><span class="bold">📂 Category:</span></label></td>
+                <td><b>Category:</b></td>
                 <td>
                     <select id="category">
                         <option value="work">💼 Work</option>
@@ -43,32 +48,35 @@
             </tr>
             <tr>
                 <td colspan="2" class="center">
-                    <button class="add-btn" onclick="addTask()">➕ <span class="bold">Add Task</span></button>
+                    <button class="add-btn" onclick="addTask()">➕ Add Task</button>
                 </td>
             </tr>
         </table>
 
         <!-- Task Progress Bar Graph -->
         <div class="progress-container">
-            <h3>Task Progress:</h3>
+            <h2><b>Task Progress</b></h2>
             <canvas id="taskChart"></canvas>
         </div>
 
-        <!-- Organized Task Table -->
+        <!-- Task Table -->
+        <h2><b>Task List</b></h2>
         <table class="task-table">
             <thead>
                 <tr>
-                    <th><span class="bold">Task</span></th>
-                    <th><span class="bold">Due Date</span></th>
-                    <th><span class="bold">Priority</span></th>
-                    <th><span class="bold">Category</span></th>
-                    <th><span class="bold">Actions</span></th>
+                    <th>Task</th>
+                    <th>Due Date & Time</th>
+                    <th>Priority</th>
+                    <th>Category</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody id="taskTableBody"></tbody>
         </table>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
